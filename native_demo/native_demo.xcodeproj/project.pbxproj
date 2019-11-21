@@ -109,9 +109,11 @@
 			buildConfigurationList = 3F09952F2386B1C20068A73B /* Build configuration list for PBXNativeTarget "native_demo" */;
 			buildPhases = (
 				1DC4599F4EE849F02CA57A65 /* [CP] Check Pods Manifest.lock */,
+				AF34B0479F3AB33F1F07DA97 /* [CP-User] Run Flutter Build Script */,
 				3F0995122386B1C10068A73B /* Sources */,
 				3F0995132386B1C10068A73B /* Frameworks */,
 				3F0995142386B1C10068A73B /* Resources */,
+				BFBAADEFC8AE7556A6272719 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,6 +190,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF34B0479F3AB33F1F07DA97 /* [CP-User] Run Flutter Build Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../flutter_demo/.metadata",
+				"${SRCROOT}/../flutter_demo/.ios/Flutter/App.framework/App",
+				"${SRCROOT}/../flutter_demo/.ios/Flutter/engine/Flutter.framework/Flutter",
+				"${SRCROOT}/../flutter_demo/.ios/Flutter/flutter_export_environment.sh",
+			);
+			name = "[CP-User] Run Flutter Build Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../flutter_demo/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+			showEnvVarsInLog = 0;
+		};
+		BFBAADEFC8AE7556A6272719 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-native_demo/Pods-native_demo-frameworks.sh",
+				"${PODS_ROOT}/../../flutter_demo/.ios/Flutter/engine/Flutter.framework",
+				"${PODS_ROOT}/../../flutter_demo/.ios/Flutter/App.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flutter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/App.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-native_demo/Pods-native_demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

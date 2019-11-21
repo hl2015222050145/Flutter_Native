@@ -1,3 +1,28 @@
-PODFILE CHECKSUM: d8dc5fbe1db22d48e389f3b766ffa05c1d1c144a
+PODS:
+  - Flutter (1.0.0)
+  - flutter_demo (0.0.1):
+    - Flutter
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `../flutter_demo/.ios/Flutter/engine`)
+  - flutter_demo (from `../flutter_demo/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `../flutter_demo/.ios/Flutter/FlutterPluginRegistrant`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: "../flutter_demo/.ios/Flutter/engine"
+  flutter_demo:
+    :path: "../flutter_demo/.ios/Flutter"
+  FlutterPluginRegistrant:
+    :path: "../flutter_demo/.ios/Flutter/FlutterPluginRegistrant"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_demo: 14742ae52bfcea1a6a0069ce86b2a1bbba3b9e39
+  FlutterPluginRegistrant: 8855ca2b426d228cb41aa6c26c0c83b8c49e3593
+
+PODFILE CHECKSUM: 3499450a06d848df7e850be860e23d0e7e462f3b
 
 COCOAPODS: 1.6.1
