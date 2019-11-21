@@ -7,7 +7,7 @@
 //
 
 #import "RootViewController.h"
-
+@import Flutter;
 @interface RootViewController ()
 
 @end
@@ -38,10 +38,9 @@
 */
 
 -(void) goFlutter{
-//    FlutterViewController *flutterVC = [[FlutterViewController alloc]init];
-//    flutterVC.title = @"flutter 界面";
-//    [self.navigationController pushViewController:flutterVC animated:YES];
-    NSLog(@"btn click");
+    FlutterViewController *flutterVC = [[FlutterViewController alloc]init];
+    flutterVC.title = @"flutter 界面";
+    [self.navigationController pushViewController:flutterVC animated:YES];
 }
 
 @end
