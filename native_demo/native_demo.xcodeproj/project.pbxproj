@@ -14,6 +14,7 @@
 		3F0995292386B1C20068A73B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0995272386B1C20068A73B /* LaunchScreen.storyboard */; };
 		3F09952C2386B1C20068A73B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F09952B2386B1C20068A73B /* main.m */; };
 		3F0995342386B2130068A73B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0995332386B2130068A73B /* RootViewController.m */; };
+		3F8FA94F23878E2C0040316D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8FA94E23878E2C0040316D /* RegisterViewController.m */; };
 		E872446C8352C7AC42CFFA98 /* libPods-native_demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53540588B7322EE65AC36C1E /* libPods-native_demo.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,8 @@
 		3F09952B2386B1C20068A73B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F0995322386B2130068A73B /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		3F0995332386B2130068A73B /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		3F8FA94D23878E2C0040316D /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		3F8FA94E23878E2C0040316D /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		53540588B7322EE65AC36C1E /* libPods-native_demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-native_demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AB6B43864C3A9BED97DFCD /* Pods-native_demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-native_demo.debug.xcconfig"; path = "Target Support Files/Pods-native_demo/Pods-native_demo.debug.xcconfig"; sourceTree = "<group>"; };
 		6C1644092C7303F1E0F2BDCB /* Pods-native_demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-native_demo.release.xcconfig"; path = "Target Support Files/Pods-native_demo/Pods-native_demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -53,7 +56,6 @@
 				64AB6B43864C3A9BED97DFCD /* Pods-native_demo.debug.xcconfig */,
 				6C1644092C7303F1E0F2BDCB /* Pods-native_demo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -89,6 +91,8 @@
 				3F0995272386B1C20068A73B /* LaunchScreen.storyboard */,
 				3F09952A2386B1C20068A73B /* Info.plist */,
 				3F09952B2386B1C20068A73B /* main.m */,
+				3F8FA94D23878E2C0040316D /* RegisterViewController.h */,
+				3F8FA94E23878E2C0040316D /* RegisterViewController.m */,
 			);
 			path = native_demo;
 			sourceTree = "<group>";
@@ -246,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8FA94F23878E2C0040316D /* RegisterViewController.m in Sources */,
 				3F09951B2386B1C10068A73B /* AppDelegate.m in Sources */,
 				3F09952C2386B1C20068A73B /* main.m in Sources */,
 				3F09951E2386B1C10068A73B /* SceneDelegate.m in Sources */,

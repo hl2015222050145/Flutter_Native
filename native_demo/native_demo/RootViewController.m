@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "RegisterViewController.h"
 @import Flutter;
 @interface RootViewController ()
 
@@ -38,9 +39,27 @@
 */
 
 -(void) goFlutter{
-    FlutterViewController *flutterVC = [[FlutterViewController alloc]init];
-    flutterVC.title = @"flutter 界面";
-    [self.navigationController pushViewController:flutterVC animated:YES];
+    FlutterViewController *flutterViewController = [[FlutterViewController alloc]init];
+    flutterViewController.title = @"flutter 界面";
+    [flutterViewController setInitialRoute:@"login"];
+    __weak __typeof(self) weakSelf = self;
+    
+    FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
+                                            methodChannelWithName:@"flutter.demo/goToNativePage"
+                                            binaryMessenger:flutterViewController];
+
+    [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
+        // call.method 获取 flutter 给回到的方法名，要匹配到 channelName 对应的多个 发送方法名，一般需要判断区分
+        // call.arguments 获取到 flutter 给到的参数，（比如跳转到另一个页面所需要参数）
+        // result 是给flutter的回调， 该回调只能使用一次
+        NSLog(@"method=%@ \narguments = %@", call.method, call.arguments);
+        RegisterViewController * registerVc = [RegisterViewController new];
+        registerVc.title = @"注册";
+        [weakSelf.navigationController pushViewController:registerVc animated:YES];
+        
+    }];
+    
+    [self.navigationController pushViewController:flutterViewController animated:YES];
 }
 
 @end

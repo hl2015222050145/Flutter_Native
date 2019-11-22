@@ -2,7 +2,8 @@
  * Created by mannyhuang on 2019/11/21.
  * 登录页面
  */
-
+import 'dart:async';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 //import 'package:groovin_material_icons/groovin_material_icons.dart';
 
@@ -13,9 +14,19 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 //变量区域
+  static const platform = const MethodChannel('flutter.demo/goToNativePage');
   final _formKey = GlobalKey<FormState>();
   String _phoneNum, _password;
   bool _isObscure = true;//密码是否显示
+
+Future<void> _goToNativePage() async {
+    try {
+      final int result = await platform
+          .invokeMethod('goToNativePage', {'userName': '$_phoneNum'});
+      print(result);
+    } on PlatformException catch (e) {}
+ }
+
   @override
   Widget build(BuildContext context) {
   return Scaffold(
@@ -105,9 +116,7 @@ class _LoginPageState extends State<LoginPage> {
             '忘记密码？',
             style: TextStyle(fontSize: 14.0, color: Colors.grey),
           ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: _goToNativePage,
         ),
       ),
     );
@@ -121,14 +130,14 @@ class _LoginPageState extends State<LoginPage> {
         width: 270.0,
         child: RaisedButton(
           child: Text(
-            'Login',
+            '登陆',
             style: Theme.of(context).primaryTextTheme.headline,
           ),
           color: Colors.black,
           onPressed: () {
             if (_formKey.currentState.validate()) {
               _formKey.currentState.save();
-              print('email:$_phoneNum , assword:$_password');
+              print('phoneNum:$_phoneNum , password:$_password');
               Navigator.pop(context);
             }
           },
@@ -161,10 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                 '点击注册',
                 style: TextStyle(color: Colors.green),
               ),
-              onTap: () {
-                print('去注册');
-                Navigator.pop(context);
-              },
+              onTap: _goToNativePage,
             ),
           ],
         ),

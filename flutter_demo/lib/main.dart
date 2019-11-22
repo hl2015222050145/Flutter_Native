@@ -12,6 +12,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      routes: <String, WidgetBuilder>{
+        "/login":(BuildContext context) => new LoginPage(),
+      },
       home: LoginPage(),
     );
   }
